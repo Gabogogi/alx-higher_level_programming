@@ -3,7 +3,7 @@ def print_last_digit(number):
 
     if number < 0:
         modulo = abs(number) % 10
-        last_digit = modulo * -1
+        last_digit = modulo
     else:
 
         last_digit = number % 10
