@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-import variable_load_5
+from variable_load_5 import a
 
-a = variable_load_5.a
-
-print("{}".format(a))
+print(a)
