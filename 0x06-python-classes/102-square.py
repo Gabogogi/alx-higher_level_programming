@@ -1,102 +1,57 @@
 #!/usr/bin/python3
-"""Defines a class Square"""
+"""This module contains a class that defines a square.
+In the Square class we initialize each object by the
+__init__ method with a private instance variable called
+__size that takes the size variable's value passed as
+argument. Also checks if the size arg has a valid value.
+"""
 
 
-class Square:
-    """Represents a square
-    Attributes:
-        __size (int): size of a side of the square
-    """
-    def __init__(self, size=0):
-        """initializes the square
-        Args:
-            size (int): size of a side of the square
-        Returns:
-            None
-        """
+class Square():
+    """A square class."""
+    def __init__(self, size=0, position=(0, 0)):
+        """Initialization of the class square."""
         self.size = size
+        self.position = position
 
     def area(self):
-        """calculates the square's area
-        Returns:
-            The area of the square
-        """
-        return (self.__size) ** 2
+        """The area of the Square"""
+        return self.__size ** 2
 
     @property
     def size(self):
-        """getter of __size
-        Returns:
-            The size of the square
-        """
+        """The size of the Square"""
         return self.__size
 
     @size.setter
-    def size(self, value):
-        """setter of __size
-        Args:
-            value (int): the size of a size of the square
-        Returns:
-            None
-        """
-        if type(value) is not int:
+    def size(self, SizeValue):
+        """set size of the Square"""
+        if type(SizeValue) != int:
             raise TypeError("size must be an integer")
-        else:
-            if value < 0:
-                raise ValueError("size must be >= 0")
-            else:
-                self.__size = value
-
-    def __lt__(self, other):
-        """Compare if square is less than another by area
-        Args:
-            other (Square): square to compare against
-        Returns:
-            True or False
-        """
-        return self.size < other.size
-
-    def __le__(self, other):
-        """Compare if square is less than or equal to another by area
-        Args:
-            other (Square): square to compare against
-        Returns:
-            True or False
-        """
-        return self.size <= other.size
-
-    def __eq__(self, other):
-        """Compare if square is equal to another by area
-        Args:
-            other (Square): square to compare against
-        Returns:
-            True or False
-        """
-        return self.size == other.size
-
-    def __ne__(self, other):
-        """Compare if square is not equal to another by area
-        Args:
-            other (Square): square to compare against
-        Returns:
-            True or False
-        """
-        return self.size != other.size
-
-    def __ge__(self, other):
-        """Compare if square is greater than or equal to another by area
-        Args:
-            other (Square): square to compare against
-        Returns:
-            True or False
-        """
-        return self.size >= other.size
+        if SizeValue < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = SizeValue
 
     def __gt__(self, other):
-        """Compare if square is greater than another by area
-        Args:
-            other (Square): square to compare against
-        Returns:
-            True or False
-        """
-        return self.size > other.
+        """greater"""
+        return self.area() > other.area()
+
+    def __lt__(self, other):
+        """less"""
+        return self.area() < other.area()
+
+    def __eq__(self, other):
+        """equal"""
+        return self.area() == other.area()
+
+    def __ge__(self, other):
+        """greater than or equal"""
+        return self.area() >= other.area()
+
+    def __le__(self, other):
+        """less than or equal"""
+        return self.area() <= other.area()
+
+    def __ne__(self, other):
+        """not equal operator"""
+        return self.area() != other.area()
