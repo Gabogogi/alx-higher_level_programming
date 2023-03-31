@@ -99,4 +99,4 @@ class Square:
         Returns:
             True or False
         """
-        return self.size > other.
+        return self.size > other.size
