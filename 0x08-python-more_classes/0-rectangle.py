@@ -4,8 +4,10 @@
 Defines an empty rectangle
 """
 
+
 class Rectangle:
+
+    """an empty class Rectangle
     """
-    an empty class Rectangle
-    """
+
     pass
