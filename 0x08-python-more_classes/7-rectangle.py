@@ -80,12 +80,10 @@ class Rectangle:
             return ""    
         result = ""
         for i in range(self.height):
-            result += self.print_symbol * self.width + "\n"
+            result += str(self.print_symbol) * self.width + "\n"
         return result.rstrip()
     
     
     def __repr__(self):
         """ return a string representation of the rectangle """
         return "Rectangle({}, {})".format(self.__width, self.__height)
-
-
