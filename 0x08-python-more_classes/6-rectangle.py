@@ -16,13 +16,13 @@ class Rectangle:
         """Instantiates rectangle optional width and height"""        
         self.width = width
         self.height = height
-        self.number_of_instances += 1
+        type(self).number_of_instances += 1
 
 
     def __del__(self):
         """delete class instance"""       
         print("Bye rectangle...")
-        self.number_of_instances -= 1 
+        type(self).number_of_instances -= 1 
 
 
     @property
