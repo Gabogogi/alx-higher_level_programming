@@ -14,7 +14,6 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """Instantiates rectangle optional width and height
-
         Args:
             width (int, optional): Width of the rectangle. Defaults to 0.
             height (int, optional): Height of the rectangle. Defaults to 0.
@@ -22,17 +21,13 @@ class Rectangle:
         self.width = width
         self.height = height
 
-
     @property
     def width(self):
         """getter for width
-
         Returns:
             _int_: Width of the rectangle
         """        """"""
         return self.__width
-
-
     
     @width.setter
     def width(self, width):
@@ -51,8 +46,6 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         self.__width = width
 
-
-
     @property
     def height(self):
         """gets height of rectangle
@@ -61,8 +54,6 @@ class Rectangle:
             int: height of rectangle
         """
         return self.__height
-
-    
     
     @height.setter
     def height(self, height):
