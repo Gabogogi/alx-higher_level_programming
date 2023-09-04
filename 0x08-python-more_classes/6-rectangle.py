@@ -7,11 +7,12 @@ Defines a rectangle with height and width
 
 class Rectangle:
 
-    number_of_instances = 0
 
-    """defines a rectangle by: (based on 0-rectangle.py)"""    
+    """defines a rectangle by: (based on 0-rectangle.py)"""
+
+
+    number_of_instaces = 0
   
-
     def __init__(self, width=0, height=0):
         """Instantiates rectangle optional width and height"""        
         self.width = width
