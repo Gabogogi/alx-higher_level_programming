@@ -80,7 +80,6 @@ class Rectangle:
             return ""    
         result = ""
         for i in range(self.height):
-            result += str(self.print_symbol) * self.width + "\n"
             result += "{}\n".format(str(self.print_symbol) * self.width)
         return result.rstrip()
     
