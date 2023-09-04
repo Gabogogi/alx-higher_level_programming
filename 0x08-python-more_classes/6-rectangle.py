@@ -11,10 +11,11 @@ class Rectangle:
     """defines a rectangle by: (based on 0-rectangle.py)"""
 
 
-    number_of_instaces = 0
+    number_of_instances = 0
+
   
     def __init__(self, width=0, height=0):
-        """Instantiates rectangle optional width and height"""        
+        """Instantiates rectangle optional width and height"""
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
