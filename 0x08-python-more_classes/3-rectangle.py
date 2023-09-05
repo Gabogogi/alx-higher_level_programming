@@ -89,4 +89,3 @@ class Rectangle:
         for i in range(self.height):
             result += "#" * self.width + "\n"
         return result.rstrip()
-
