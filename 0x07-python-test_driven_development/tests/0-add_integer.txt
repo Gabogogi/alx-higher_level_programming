@@ -1,0 +1,73 @@
+Test for  0-add_integer.py
+
+Returns the sum of two arguments
+The two args have to be int or floats
+
+Importing the function from the module:
+	>>> add_integer = __import__("0-add_integer").add_integer
+
+Check for function docstring
+    >>> f = __import__("0-add_integer").add_integer.__doc__
+    >>> len(f) > 1
+    True
+
+Regular integers
+    >>> add_integer(2, 5)
+    7
+
+Positive and negative nos
+    >>> add_integer(2, -7)
+    5
+
+Negative and negative nos
+    >>> add_integer(-2, -7)
+    -9
+    
+Zero and nonzero nos
+    >>> add_integer(0, -7)
+    -7
+
+Float and int nos
+    >>> add_integer(8.6, 2)
+    10
+
+Float and Float
+    >>> add_integer(8.6, 2.9)
+    10
+
+Float and string
+    >>> add_integer(8.6, "Ben")
+    Traceback (most recent call last):
+	 ...
+	TypeError: b must be an integer
+
+Number and list
+    >>> add_integer(8, [4])
+    Traceback (most recent call last):
+	 ...
+	TypeError: b must be an integer
+
+Number and tuple
+    >>> add_integer(8, (4,))
+    Traceback (most recent call last):
+	 ...
+	TypeError: b must be an integer
+
+None and number
+    >>> add_integer(None, 4)
+    Traceback (most recent call last):
+	 ...
+	TypeError: a must be an integer
+
+infinity and number
+    >>> add_integer(float('inf'), 4)
+    Traceback (most recent call last):
+	 ...
+	OverflowError: cannot convert float infinity to integer
+
+No arguments
+    >>> add_integer()
+    Traceback (most recent call last):
+	 ...
+	TypeError: add_integer() missing 1 required positional argument
+
