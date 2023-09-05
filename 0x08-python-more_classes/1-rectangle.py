@@ -4,18 +4,15 @@
 Defines a rectangle with height and width
 """
 
+
 class Rectangle:
-
-
-    """defines a rectangle by: (based on 0-rectangle.py)
-    """    
-  
+    """defines a rectangle by: (based on 0-rectangle.py)"""
     def __init__(self, width=0, height=0):
         """Instantiates rectangle optional width and height
         Args:
             width (int, optional): Width of the rectangle. Defaults to 0.
             height (int, optional): Height of the rectangle. Defaults to 0.
-        """        
+        """
         self.width = width
         self.height = height
 
