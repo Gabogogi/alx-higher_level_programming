@@ -28,7 +28,7 @@ class Rectangle:
         """        """"""
         return self.__width
 
-@width.setter
+    @width.setter
     def width(self, width):
         """Sets width of rectangle
 
@@ -53,7 +53,7 @@ class Rectangle:
             int: height of rectangle
         """
         return self.__height
-    
+
     @height.setter
     def height(self, height):
         """sets height of the rectangle
@@ -71,11 +71,9 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = height
 
-
     def area(self):
         """Returns area of rectangle"""
         return self.__height * self.width
-    
 
     def perimeter(self):
         """Returns perimeter of rectangle"""
@@ -83,12 +81,12 @@ class Rectangle:
             return 0
         return (self.__height * 2) + (self.__width * 2)
 
-
     def __str__(self) -> str:
         """Returns a string representation of rectangle with hash"""
         if self.__height == 0 or self.__width == 0:
-            return ""    
+            return ""
         result = ""
         for i in range(self.height):
             result += "#" * self.width + "\n"
         return result.rstrip()
+
