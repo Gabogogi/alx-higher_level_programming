@@ -1,4 +1,5 @@
-ef print_square(size):
+#!/usr/bin/python3
+def print_square(size):
     if not isinstance(size, (int)):
         raise TypeError("size must be an integer")
     if size < 0:
@@ -7,4 +8,3 @@ ef print_square(size):
         raise TypeError("size must be an integer")
     for i in range(size):
         print("{}".format("#" * size))
-

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def matrix_divided(matrix, div):
     result = [[0 for _ in range(len(matrix[0]))] for _ in range(len(matrix))]
     for outer_list in matrix:
@@ -17,4 +18,3 @@ def matrix_divided(matrix, div):
             result[i][j] = "{:.2f}".format(matrix[i][j] / div)
 
     return result
-

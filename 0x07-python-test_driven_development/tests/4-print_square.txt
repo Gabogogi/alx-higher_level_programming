@@ -17,7 +17,7 @@ Check for function docstring
 
 positive integers
     >>> print_square(5)
-    #####
+	#####
 	#####
 	#####
 	#####
@@ -46,4 +46,8 @@ Non-Number arguments:
     Traceback (most recent call last):
     TypeError: size must be an integer
 
-
+Checking for no args:
+	 >>> print_square()
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: print_square() missing 1 required positional argument: 'size'

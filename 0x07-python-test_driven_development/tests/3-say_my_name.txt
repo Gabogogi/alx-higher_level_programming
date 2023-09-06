@@ -1,6 +1,11 @@
 Importing the function from the module:
 	>>> say_my_name = __import__("3-say_my_name").say_my_name
 
+Checking for module docstring:
+	 >>> m = __import__("3-say_my_name").__doc__
+	 >>> len(m) > 1
+	 True
+
 Check for function docstring
     >>> f = __import__("3-say_my_name").say_my_name.__doc__
     >>> len(f) > 1
