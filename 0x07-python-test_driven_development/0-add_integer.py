@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def add_integer(a, b=98):
     """
     Adds two integer. casting them to integers if needed"""
