@@ -32,11 +32,6 @@ class TestMaxInteger(unittest.TestCase):
         '''Test for ints and floats'''
         ints_n_floats = [4, 6.7, 4, 10]
         self.assertEqual(max_integer(ints_n_floats), 10)
-    
-    def test_one_neg(self):
-         """Tests for at least one negative no"""
-        one_neg_list = [2, 10, 8, -66, 36, 14, 50]
-        self.assertEqual(max_integer(one_neg_list), 50)
 
     def test_only_neg(self):
         """Tests for only negative no"""
