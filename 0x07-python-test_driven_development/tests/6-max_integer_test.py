@@ -49,7 +49,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer(start_list), 600)
 
     def test_max_middle(self):
-         """Tests for all positive with max at middle"""
+        """Tests for all positive with max at middle"""
         mid_list = [2, 10, 8, 66, 36, 14, 50]
         self.assertEqual(max_integer(mid_list), 66)
 
@@ -68,7 +68,11 @@ class TestMaxInteger(unittest.TestCase):
         str = []
         self.assertEqual(max_integer(str), None)
 
+    def test_one_neg(self):
+        """Test at least one negative"""
+        str = [6, -8, 4]
+        self.assertEqual(max_integer(str), 6)
+
 
 if __name__ == '__main__':
     unittest.main()
-
