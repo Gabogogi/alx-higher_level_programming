@@ -1,0 +1,80 @@
+importing the function from module
+	>>> MyList = __import__("1-my_list").MyList
+
+Test for modue docstring
+	>>> m = __import__("1-my_list").__doc__
+	>>> len(m) > 1
+	True
+
+Test for class doctring
+	>>> c = __import__("1-my_list").MyList.__doc__
+	>>> len(c) > 1
+	True
+
+Test for method dosctring
+	>>> md = __import__("1-my_list").MyList.print_sorted.__doc__
+	>>> len(md) > 1
+	True
+
+Test that MyList inerits from list
+	>>> issubclass(MyList, list)
+	True
+
+Check for empty list
+	>>> emlist = MyList()
+	>>> emlist.print_sorted()
+	[]
+	>>> emlist.append(1)
+	>>> emlist.append(2)
+	>>> emlist.append(3)
+	>>> emlist.append(4)
+	>>> print(emlist)
+	[1, 2, 3, 4]
+
+Checking for list already in correct order:
+	 >>> emlist.print_sorted()
+	 [1, 2, 3, 4]
+
+Checking for reversed order list:
+	 >>> emlist = MyList()
+	 >>> emlist.append(4)
+	 >>> emlist.append(3)
+	 >>> emlist.append(2)
+	 >>> emlist.append(1)
+	 >>> print(emlist)
+	 [4, 3, 2, 1]
+	 >>> emlist.print_sorted()
+	 [1, 2, 3, 4]
+	 >>> print(emlist)
+	 [4, 3, 2, 1]
+
+Checking for one negative number:
+	 >>> emlist.append(-1)
+	 >>> emlist.append(5)
+	 >>> print(emlist)
+	 [4, 3, 2, 1, -1, 5]
+	 >>> emlist.print_sorted()
+	 [-1, 1, 2, 3, 4, 5]
+	 >>> print(emlist)
+	 [4, 3, 2, 1, -1, 5]
+
+Checking for all negative numbers:
+	 >>> emlist = MyList()
+	 >>> emlist.append(-10)
+	 >>> emlist.append(-1)
+	 >>> emlist.append(-7)
+	 >>> emlist.append(-2)
+	 >>> emlist.append(-8)
+	 >>> print(emlist)
+	 [-10, -1, -7, -2, -8]
+	 >>> emlist.print_sorted()
+	 [-10, -8, -7, -2, -1]
+	 >>> print(emlist)
+         [-10, -1, -7, -2, -8]
+
+Checking for too many arguments:
+	 >>> emlist.print_sorted(1)
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: print_sorted() takes 1 positional argument but 2 were given
+
