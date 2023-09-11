@@ -22,16 +22,19 @@ class Rectangle(BaseGeometry):
     """defines a rectangle from geometry class"""
     def __init__(self, width, height):
         """initializes a new rectangle"""
-        self.integer_validator("width", width)
+        super().integer_validator("width", width)
         self.__width = width
-        self.integer_validator("height", height)
+        super().integer_validator("height", height)
         self.__height = height
 
-    def area(self, width, height):
+    def area(self):
         """implements area function"""
-        self.area = self.width * self.height
+        return self.__width * self.__height
 
     def __str__(self):
-        """sring function"""
-        return "[{}] {}/{}".format(self.__class.__.__name__,
-         self.width, self.height)
+        """String function"""
+        return "[{}] {}/{}".format(
+            self.__class__.__name__,
+            self.__width,
+            self.__height
+        )
