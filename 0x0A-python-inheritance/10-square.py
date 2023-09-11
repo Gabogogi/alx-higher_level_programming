@@ -40,11 +40,11 @@ class Rectangle(BaseGeometry):
         )
 
 
-class Square(Rectagle):
+class Square(Rectangle):
     '''square class from rec'''
     def __init__(self, size):
         '''initializes square instance'''
-        super().__init__()
+        super().__init__(size, size)
         super().integer_validator("size", size)
         self.__size = size
 
