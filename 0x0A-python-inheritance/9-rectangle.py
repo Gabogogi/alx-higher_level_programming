@@ -33,7 +33,5 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """sring function"""
-        return "[{}] {}/{}".format(self.__class.__.__name__, self.width, self.height)
-
-
-
+        return "[{}] {}/{}".format(self.__class.__.__name__,
+         self.width, self.height)
