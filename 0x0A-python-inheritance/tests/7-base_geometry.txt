@@ -1,0 +1,13 @@
+Importing the function from the module:
+	>>> integer_validator  = __import__("7-base_geometry").integer_validator
+
+Checking for module docstring:
+	 >>> m = __import__("3-base_geometry").__doc__
+	 >>> len(m) > 1
+	 True
+
+Check for function docstring
+    >>> f = __import__("7-base_geometry").integer_validator.__doc__
+    >>> len(f) > 1
+    True
+
