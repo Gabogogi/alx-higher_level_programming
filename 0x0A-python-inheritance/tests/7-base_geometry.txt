@@ -1,5 +1,5 @@
 Importing the function from the module:
-	>>> int_valid  = __import__("7-base_geometry").Basegeometry
+	>>> int_valid  = __import__("7-base_geometry").BaseGeometry
 
 Checking for module docstring:
 	 >>> m = __import__("7-base_geometry").__doc__
