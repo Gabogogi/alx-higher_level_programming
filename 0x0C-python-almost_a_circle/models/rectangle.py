@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Rectangle which inerits from square'''
+'''Rectangle which inherits from square'''
 from models.base import Base
 
 
@@ -22,8 +22,8 @@ class Rectangle(Base):
     def width(self, width):
         '''setter for width'''
         if type(width) is int:
-            if width < 0:
-                raise ValueError('width must be >= 0')
+            if width <= 0:
+                raise ValueError('width must be > 0')
             else:
                 self.__width = width
         else:
@@ -38,8 +38,8 @@ class Rectangle(Base):
     def height(self, height):
         '''setter for height'''
         if type(height) is int:
-            if height < 0:
-                raise ValueError('height must be >= 0')
+            if height <= 0:
+                raise ValueError('height must be > 0')
             else:
                 self.__height = height
         else:
@@ -55,7 +55,7 @@ class Rectangle(Base):
         '''setter for x'''
         if type(x) is int:
             if x < 0:
-                raise ValueError('x must be >= 0')
+                raise ValueError('x must be > 0')
             else:
                 self.__x = x
         else:
@@ -71,7 +71,7 @@ class Rectangle(Base):
         '''setter for y'''
         if type(y) is int:
             if y < 0:
-                raise ValueError('y must be >= 0')
+                raise ValueError('y must be > 0')
             else:
                 self.__y = y
         else:
@@ -87,26 +87,43 @@ class Rectangle(Base):
             for j in range(self.__width):
                 print('#', end="")
             print()
-
+    
     def update(self, *args, **kwargs):
-        '''Update attrs based on pos and keyword args'''
-        if args:
-            # If pos args, update attributes in order
-            if len(args) >= 1:
-                self.id = args[0]
-            if len(args) >= 2:
-                self.width = args[1]
-            if len(args) >= 3:
-                self.height = args[2]
-            if len(args) >= 4:
-                self.x = args[3]
-            if len(args) >= 5:
-                self.y = args[4]
-        else:
-            # update attrs using keyword args, if no keyword args
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+        """Update the Rectangle"""
+        if args and len(args) != 0:
+            a = 0
+            for arg in args:
+                if a == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif a == 1:
+                    self.width = arg
+                elif a == 2:
+                    self.height = arg
+                elif a == 3:
+                    self.x = arg
+                elif a == 4:
+                    self.y = arg
+                a += 1
 
+        elif kwargs and len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = v
+                elif k == "width":
+                    self.width = v
+                elif k == "height":
+                    self.height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
+    
     def to_dictionary(self):
         '''returns dictionary rep of rectangle'''
         return {'x': self.__x, 'y': self.__y, 'id': self.id,
@@ -114,6 +131,10 @@ class Rectangle(Base):
 
     def __str__(self):
         '''string representation'''
-        return "[{}] ({}) {}/{}  - {}/{}".format(
+        return "[{}] ({}) {}/{} - {}/{}".format(
             self.__class__.__name__, self.id, self.__x, self.__y,
+<<<<<<< HEAD
             self.__width, self.__height)
+=======
+            self.__width, self.__height)
+>>>>>>> bf2d45d10b49ac1a5307a07278bcc060da9e0378
