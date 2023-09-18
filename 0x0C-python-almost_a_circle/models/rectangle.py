@@ -82,11 +82,16 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        '''returns rectangle representation'''
-        for i in range(self.__height):
-            for j in range(self.__width):
-                print('#', end="")
-            print()
+        """Print the Rectangle using the `#` character."""
+        if self.width == 0 or self.height == 0:
+            print("")
+            return
+
+        [print("") for y in range(self.y)]
+        for h in range(self.height):
+            [print(" ", end="") for x in range(self.x)]
+            [print("#", end="") for w in range(self.width)]
+            print("")
     
     def update(self, *args, **kwargs):
         """Update the Rectangle"""
@@ -133,8 +138,4 @@ class Rectangle(Base):
         '''string representation'''
         return "[{}] ({}) {}/{} - {}/{}".format(
             self.__class__.__name__, self.id, self.__x, self.__y,
-<<<<<<< HEAD
             self.__width, self.__height)
-=======
-            self.__width, self.__height)
->>>>>>> bf2d45d10b49ac1a5307a07278bcc060da9e0378
