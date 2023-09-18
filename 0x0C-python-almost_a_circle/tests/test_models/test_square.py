@@ -216,7 +216,7 @@ class TestSquare_x(unittest.TestCase):
             Square(1, float('nan'), 2)
 
     def test_negative_x(self):
-        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+        with self.assertRaisesRegex(ValueError, "x must be > 0"):
             Square(5, -1, 0)
 
 
@@ -284,7 +284,7 @@ class TestSquare_y(unittest.TestCase):
             Square(1, 1, float('nan'))
 
     def test_negative_y(self):
-        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+        with self.assertRaisesRegex(ValueError, "y must be > 0"):
             Square(3, 0, -1)
 
 
@@ -491,7 +491,7 @@ class TestSquare_update_args(unittest.TestCase):
 
     def test_update_args_x_negative(self):
         s = Square(10, 10, 10, 10)
-        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+        with self.assertRaisesRegex(ValueError, "x must be > 0"):
             s.update(98, 1, -4)
 
     def test_update_args_invalid_y(self):
@@ -501,7 +501,7 @@ class TestSquare_update_args(unittest.TestCase):
 
     def test_update_args_y_negative(self):
         s = Square(10, 10, 10, 10)
-        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+        with self.assertRaisesRegex(ValueError, "y must be > 0"):
             s.update(98, 1, 2, -4)
 
     def test_update_args_size_before_x(self):
@@ -593,7 +593,7 @@ class TestSquare_update_kwargs(unittest.TestCase):
 
     def test_update_kwargs_x_negative(self):
         s = Square(10, 10, 10, 10)
-        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+        with self.assertRaisesRegex(ValueError, "x must be > 0"):
             s.update(x=-5)
 
     def test_update_kwargs_invalid_y(self):
@@ -603,7 +603,7 @@ class TestSquare_update_kwargs(unittest.TestCase):
 
     def test_update_kwargs_y_negative(self):
         s = Square(10, 10, 10, 10)
-        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+        with self.assertRaisesRegex(ValueError, "y must be > 0"):
             s.update(y=-5)
 
     def test_update_args_and_kwargs(self):
