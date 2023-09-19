@@ -92,7 +92,7 @@ class Rectangle(Base):
             [print(" ", end="") for x in range(self.x)]
             [print("#", end="") for w in range(self.width)]
             print("")
-    
+
     def update(self, *args, **kwargs):
         """Update the Rectangle"""
         if args and len(args) != 0:
@@ -128,7 +128,7 @@ class Rectangle(Base):
                     self.x = v
                 elif k == "y":
                     self.y = v
-    
+
     def to_dictionary(self):
         '''returns dictionary rep of rectangle'''
         return {'x': self.__x, 'y': self.__y, 'id': self.id,

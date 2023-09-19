@@ -37,7 +37,7 @@ class Base:
         json_string = cls.to_json_string(list_of_dicts)
         with open(filename, "w") as file:
             file.write(json_string)
-    
+
     @staticmethod
     def from_json_string(json_string):
         '''returns the list of the JSON string representation'''
@@ -58,7 +58,7 @@ class Base:
                 new = cls(1)
             new.update(**dictionary)
             return new
-    
+
     @classmethod
     def load_from_file(cls):
         """Return a list of classes instantiated from a file of JSON strings"""
