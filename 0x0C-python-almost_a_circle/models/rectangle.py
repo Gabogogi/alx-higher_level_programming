@@ -55,7 +55,7 @@ class Rectangle(Base):
         '''setter for x'''
         if type(x) is int:
             if x < 0:
-                raise ValueError('x must be > 0')
+                raise ValueError('x must be >= 0')
             else:
                 self.__x = x
         else:
@@ -71,7 +71,7 @@ class Rectangle(Base):
         '''setter for y'''
         if type(y) is int:
             if y < 0:
-                raise ValueError('y must be > 0')
+                raise ValueError('y must be >= 0')
             else:
                 self.__y = y
         else:
