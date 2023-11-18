@@ -1,0 +1,1 @@
+ORM and all abput Python and SQL
