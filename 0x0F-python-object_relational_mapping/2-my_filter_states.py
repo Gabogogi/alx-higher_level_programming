@@ -12,19 +12,21 @@ if __name__ =="__main__":
         exit(1)
     username = sys.argv[1]
     password = sys.argv[2]
-    name = sys.argv[3]
+    db_name = sys.argv[3]
+    name = sys.argv[4]
+
     
 
 
-    connection = MySQLdb.connect(user=username, password=password, database=name)
+    connection = MySQLdb.connect(user=username, password=password, database=db_name)
     cursor = connection.cursor()
     
-    state_name = "SELECT * FROM states WHERE name LIKE BINARY '{}'".format(sys.argv[4])
+    state_name = "SELECT * FROM states LIKE BINARY '{}'".format(name)
     cursor.execute(state_name)
     result = cursor.fetchall()
     for i in result:
         print(i)
     cursor.close()
-    connection.close()
+
    
 
