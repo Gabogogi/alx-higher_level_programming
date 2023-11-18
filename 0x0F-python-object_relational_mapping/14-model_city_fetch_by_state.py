@@ -24,10 +24,15 @@ if __name__ == "__main__":
     session = Session()
 
     # Querying for the first State object
-    all_city = session.query(City, State).join(State).order_by(City.id).all()
-    
-    for city, state in all_city:
-        print(f"{state.name}: ({city.id}) {city.name}")
+    all_city = (
+    session.query(State.name, City.id, City.name)
+    .join(City, City.state_id == State.id)
+    .order_by(City.id)
+    .all()
+    )
+
+    for state_name, city_id, city_name in all_city:
+        print(f"{state_name}: ({city_id}) {city_name}")
 
 
     # Closing the session
