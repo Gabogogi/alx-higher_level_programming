@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''
-name of a state as an argument and lists
-all cities of that state
+takes in the name of a state as an argument and 
+lists all cities of that state
 '''
 import MySQLdb
 import sys
@@ -38,3 +38,4 @@ if __name__ =="__main__":
  
     cursor.close()
     db.close()
+
