@@ -24,8 +24,9 @@ if __name__ =="__main__":
     state_name = "SELECT * FROM states LIKE BINARY '{}'".format(name)
     cursor.execute(state_name)
     result = cursor.fetchall()
-    for i in result:
-        print(i)
+    for result in result:
+        if result[1] == name:
+            print(result)
     cursor.close()
 
    
