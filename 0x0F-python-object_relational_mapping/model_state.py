@@ -11,7 +11,7 @@ from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
 
-class States(Base):
+class State(Base):
     '''
     Script to list all cities of a specified state from a MySQL database.
     '''
