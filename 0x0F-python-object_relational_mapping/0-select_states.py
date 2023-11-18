@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+'''
+Gets all states in hbtn_0e_0_usa dtabase
+'''
 import MySQLdb
 import sys
 
