@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-'''
-Improve the files  model_state.py
-'''
+"""
+Script to print the first State object from the database hbtn_0e_6_usa
+"""
+
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
@@ -9,10 +10,12 @@ from sqlalchemy.orm import relationship
 Base = declarative_base()
 
 class State(Base):
-    '''
-    Script to list all cities of a specified state from a MySQL database.
-    '''
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
-    cities = relationship("City", backref="state", cascade="all, delete")
+    cities = relationship(
+        "City",
+        cascade="all, delete-orphan",
+        backref="state",
+        single_parent=True
+    )

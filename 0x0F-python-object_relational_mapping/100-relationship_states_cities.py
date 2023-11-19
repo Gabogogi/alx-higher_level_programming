@@ -8,7 +8,6 @@ from sqlalchemy.orm import sessionmaker
 from relationship_city import Base, City
 from relationship_state import State
 
-
 if __name__ == "__main__":
     if len(argv) != 4:
         print("Usage: <username> <password> <databaseName>")
@@ -23,9 +22,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
+    # Import City class before creating State
+    from relationship_city import Base, City
+
     # Creating the State "California" with the City "San Francisco"
-    new_state = State(name="California", cities=[City(name="San Francisco")])
-    session.add(new_state)
+    session.add(City(name="San Francisco", state=State(name="California")))
     session.commit()
 
     # Closing the session
