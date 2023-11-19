@@ -1,11 +1,14 @@
-# relationship_city.py
-from sqlalchemy import create_engine, ForeignKey, String, Integer, Column
-from sqlalchemy.ext.declarative import declarative_base
+#!/usr/bin/python3
+"""Lists states"""
 
-Base = declarative_base()
+from sqlalchemy import Column, Integer, String, ForeignKey
+from relationship_state import Base
 
 class City(Base):
+    """Class representing the states table"""
     __tablename__ = 'cities'
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+
+    id = Column(Integer, nullable=False, primary_key=True,
+                autoincrement=True, unique=True)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
